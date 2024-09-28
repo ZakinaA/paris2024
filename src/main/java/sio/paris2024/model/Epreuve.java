@@ -52,11 +52,16 @@ public class Epreuve {
         this.athletes = athletes;
     }
     
-    public void  addAthlete(Athlete a){
+    public void addAthlete(Athlete a){
         if (athletes == null){
             athletes = new ArrayList<Athlete>();
         }
         athletes.add(a);
     }
+    
+    public int getNbAthletes(){
+        return athletes.size();
+    }
+    
     
 }
