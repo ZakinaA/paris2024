@@ -49,7 +49,8 @@
                 <thead>
                     <tr>             
                         <th>id</th>
-                        <th>nom</th>             
+                        <th>nom</th>
+                        <th>date naissance</th>
                         <th>pays</th>                
                     </tr>
                 </thead>
@@ -64,7 +65,11 @@
 
                                 out.println("<td><a href ='../ServletAthlete/consulter?idAthlete="+ a.getId()+ "'>");
                                 out.println(a.getNom());
-                                out.println("</a></td>");;                        
+                                out.println("</a></td>");;  
+                                
+                                out.println("<td>");
+                                out.println(a.getDateNaiss());
+                                out.println("</a></td>");;
                            
                                 out.println("<td>");
                                 out.println(a.getPays().getNom());
