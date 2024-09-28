@@ -8,6 +8,9 @@
 <%@page import="sio.paris2024.model.Athlete"%>
 <%@page import="sio.paris2024.model.Pays"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.time.Period"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,7 +53,7 @@
                     <tr>             
                         <th>id</th>
                         <th>nom</th>
-                        <th>date naissance</th>
+                        <th>age</th>
                         <th>pays</th>                
                     </tr>
                 </thead>
@@ -67,8 +70,11 @@
                                 out.println(a.getNom());
                                 out.println("</a></td>");;  
                                 
+                                LocalDate toDay = LocalDate.now();
+                                int age = Period.between(a.getDateNaiss(), toDay).getYears();
+                                
                                 out.println("<td>");
-                                out.println(a.getDateNaiss());
+                                out.println(age);
                                 out.println("</a></td>");;
                            
                                 out.println("<td>");
